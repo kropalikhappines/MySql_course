@@ -1,0 +1,26 @@
+dz1----------------------
+
+ars_user@arsuser:~$ nano .my.cnf
+
+[mysql]
+user=root
+password=Q-we1234
+
+dz2-----------------------
+
+mysql> CREATE DATABASE example;
+mysql> USE example;
+
+mysql> create table user (id INT, name TEXT);
+
+dz3-----------------------
+
+ars_user@arsuser:~$ mysqldump -u root -p example > example.sql
+
+mysql> CREATE DATABASE sample;
+ars_user@arsuser:~$ mysql -u root -p sample < example.sql
+
+dz4-----------------------
+
+ars_user@arsuser:~$ sudo mysqldump -u root -p --opt --where="1 limit 100" mysql help_keyword > hk100.sql
+
